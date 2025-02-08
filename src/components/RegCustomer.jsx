@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import uservalidation from "../uservalidation"
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -16,7 +16,7 @@ function RegCustomer()
         "gender":""
     })
     const [errors,setErrors]=useState({})
-    const history=useHistory()
+    const navigate=useNavigate()
     const [submitted,setSubmitted]=useState(false)
     const [Verifed,setVerifed]=useState(false);
  
@@ -47,7 +47,7 @@ function RegCustomer()
             .then(resp=>{
                 console.log(resp)
                 alert("Customer registered successfully")
-                history.push("/clogin")
+                navigate.push("/clogin")
             })
             .catch(error=>{
                 console.log("Error",error)

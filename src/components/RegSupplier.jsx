@@ -1,11 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import uservalidation from "../uservalidation"
 // import ReCAPTCHA from "react-google-recaptcha"
 function RegSupplier()
 {
-    const history=useHistory()
+    const navigate=useNavigate()
     const [submitted,setSubmitted]=useState(false)
     const [Verifed,setVerifed]=useState(false);
     const [user,setUser]=useState({
@@ -36,7 +36,7 @@ function RegSupplier()
             .then(resp=>{
                 console.log(resp)
                 alert("Guide registered successfully")
-                history.push("/slogin")
+                navigate.push("/slogin")
             })
             .catch(error=>{
                 console.log("Error",error)

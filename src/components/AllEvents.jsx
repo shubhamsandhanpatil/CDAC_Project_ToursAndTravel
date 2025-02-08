@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import {useHistory,useParams,useLocation} from "react-router-dom";
+import {useNavigate,useParams,useLocation} from "react-router-dom";
 import Event from "./Event";
 import queryString  from "query-string";
 import TopSlider from "./TopSlider";
@@ -17,7 +17,7 @@ function AllEvents(){
     const [item,setItem]=useState({})
     const [qty,setQty]=useState("")
     const dispatch=useDispatch()
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const [showDialog,setShowDialog]=useState("modal fade")
     const [display,setDisplay]=useState("none")
@@ -69,7 +69,7 @@ function AllEvents(){
     const addToCart=item=>{  
         if(sessionStorage.getItem("userid")==null){
             alert("Please login first to book event")
-            history.push("/clogin")
+            navigate.push("/clogin")
         }
         else if(sessionStorage.getItem("role")!=="Customer"){
             alert("Only customer can book event")

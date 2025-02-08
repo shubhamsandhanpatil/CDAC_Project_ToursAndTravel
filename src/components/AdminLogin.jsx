@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import loginvalidation from "../loginvalidation"
 
 
@@ -14,7 +14,7 @@ function AdminLogin(){
     const [submitted,setSubmitted]=useState(false)
     const [errors,setErrors]=useState({})
     const [errmsg,setErrmsg]=useState()
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handleInput=(e)=>{
         setUser({...user,[e.target.name]:e.target.value})
@@ -38,7 +38,7 @@ function AdminLogin(){
                 sessionStorage.setItem("uname",result.uname)
                 sessionStorage.setItem("role","Admin")
                 dispatch({type:'IsLoggedIn'})
-                history.push("/aprofile")
+                navigate.push("/aprofile")
             })
             .catch(error=>{
                 console.log("Error",error);

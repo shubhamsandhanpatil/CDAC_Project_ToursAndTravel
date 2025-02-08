@@ -3,7 +3,7 @@ import Header from './components/Header';
 import RegSupplier from './components/RegSupplier';
 import NavBar from './components/NavBar';
 import RegCustomer from './components/RegCustomer';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminLogin from './components/AdminLogin';
 import AdminProfile from './components/AdminProfile';
 import AllCustomers from './components/AllCustomers';
@@ -21,39 +21,36 @@ import Bookings from './components/Bookings';
 import ViewCart from './components/ViewCart';
 import Footer from './components/Footer';
 
-
 function App() {
   return (
     <div className="App">
       <Header />      
       <BrowserRouter>
-      <NavBar />
-      
-        <Switch>
-          <Route component={AllEvents} path="/" exact />
-          <Route component={AllEvents} path="/cats" />
-          <Route component={RegSupplier} path="/regsupplier" />
-          <Route component={RegCustomer} path="/register" />          
-          <Route component={AdminLogin} path="/alogin" />          
-          <Route component={GuideLogin} path="/slogin" />          
-          <Route component={CustomerLogin} path="/clogin" />          
-          <Route component={AdminProfile} path="/aprofile" />          
-          <Route component={GuideProfile} path="/sprofile" />          
-          <Route component={CustomerProfile} path="/cprofile" />          
-          <Route component={AllCustomers} path="/customers" />          
-          <Route component={AllGuides} path="/guides" />                  
-          <Route component={AddEvent} path="/add-product" />          
-          <Route component={EditEvent} path="/edit/:prodid" />          
-          <Route component={MyEvents} path="/myproducts" />          
-          <Route component={MyOrders} path="/myorders" />          
-          <Route component={Bookings} path="/bookings" />          
-          <Route component={ViewCart} path="/cart" /> 
-          <Route component={Footer} path="/Footer" />
-        </Switch>
-        <Footer/>
-        </BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<AllEvents />} />
+          <Route path="/cats" element={<AllEvents />} />
+          <Route path="/regsupplier" element={<RegSupplier />} />
+          <Route path="/register" element={<RegCustomer />} />          
+          <Route path="/alogin" element={<AdminLogin />} />          
+          <Route path="/slogin" element={<GuideLogin />} />          
+          <Route path="/clogin" element={<CustomerLogin />} />          
+          <Route path="/aprofile" element={<AdminProfile />} />          
+          <Route path="/sprofile" element={<GuideProfile />} />          
+          <Route path="/cprofile" element={<CustomerProfile />} />          
+          <Route path="/customers" element={<AllCustomers />} />          
+          <Route path="/guides" element={<AllGuides />} />                  
+          <Route path="/add-product" element={<AddEvent />} />          
+          <Route path="/edit/:prodid" element={<EditEvent />} />          
+          <Route path="/myproducts" element={<MyEvents />} />          
+          <Route path="/myorders" element={<MyOrders />} />          
+          <Route path="/bookings" element={<Bookings />} />          
+          <Route path="/cart" element={<ViewCart />} /> 
+          <Route path="/footer" element={<Footer />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
-    
   );
 }
 

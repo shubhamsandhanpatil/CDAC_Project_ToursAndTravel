@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import loginvalidation from "../loginvalidation"
 
 
@@ -16,7 +16,7 @@ function CustomerLogin(){
     const [errors,setErrors]=useState({})
     const [submitted,setSubmitted]=useState(false)
     const [Verifed,setVerifed]=useState(false);
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handleInput=(e)=>{
         setUser({...user,[e.target.name]:e.target.value})
@@ -41,7 +41,7 @@ function CustomerLogin(){
                 sessionStorage.setItem("role","Customer")
                 sessionStorage.setItem("id",result.id)  
                 dispatch({type:'IsLoggedIn'})
-                history.push("/")
+                navigate.push("/")
             })
             .catch(error=>{
                 console.log("Error",error);

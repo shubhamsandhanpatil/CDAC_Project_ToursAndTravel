@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import eventvalidation from "./eventvalidation";
 
 function EditEvent(){
@@ -20,7 +20,7 @@ function EditEvent(){
     
     const [errors,setErrors]=useState({})
     const [submitted,setSubmitted]=useState(false)
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handleInput=e=>{
         setProduct({...product,[e.target.name]:e.target.value})
@@ -48,7 +48,7 @@ function EditEvent(){
                 let result=resp.data.data;
                 console.log(result) 
                 alert("Product saved successfully")               
-                history.push("/myproducts")
+                navigate.push("/myproducts")
             })
             .catch(error=>{
                 console.log("Error",error);

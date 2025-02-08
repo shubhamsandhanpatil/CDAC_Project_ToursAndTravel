@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import eventvalidation from "./eventvalidation";
 
 function AddEvent(){
@@ -20,7 +20,7 @@ function AddEvent(){
     const [selectedPhoto3,setSelectedPhoto3]=useState(null)
   
     const [submitted,setSubmitted]=useState(false)
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handleInput=e=>{
        
@@ -70,7 +70,7 @@ function AddEvent(){
                 let result=resp.data;
                 console.log(result) 
                 alert("Event Saved Successfully")               
-                history.push("/myproducts")
+                navigate.push("/myproducts")
             })
             .catch(error=>{
                 console.log("Error",error);

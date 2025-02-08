@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import LoginRegisterMenu from "./LoginRegisterMenu"
 
 const RoleNavbar=({isLoggedIn})=>{
     const logout=e=>{
         dispatch({type:'LogOut'})
         sessionStorage.clear();
-        history.push("/");
+        navigate.push("/");
     }
     const state=useSelector((state)=>state);
-    const history=useHistory()
+    const navigate=useNavigate()
     const dispatch=useDispatch()
     console.log(sessionStorage.getItem("role"),isLoggedIn)
     if(!isLoggedIn) {

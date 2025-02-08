@@ -2,13 +2,13 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function ViewCart(){
     const state=useSelector((state)=>state);
     const dispatch=useDispatch()
-    const history=useHistory()
+    const navigate=useNavigate()
     const [address,setAddress]=useState({
         "city":"",
         "state":"Maharashtra",
@@ -62,7 +62,7 @@ function ViewCart(){
         .then(resp=>{
             console.log(resp)
             dispatch({type:'Clear'});
-            history.push('/myorders')
+            navigate.push('/myorders')
         })  
     }
 

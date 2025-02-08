@@ -72,7 +72,7 @@ function MyOrders(){
                             {details.map(x => (
                                 <tr>
                                     <td>{x.event.eventid}</td>
-                                    <td><img className="mr-2 float-left" src={"http://localhost:9090/"+x.event.photo1} width="100" />
+                                    <td><img className="mr-2 float-left" src={"http://localhost:9090/"+x.event.photo1} width="100" alt="Tour Destination" />
                                     {x.event.eventname}<br/>
                                     Category: {x.event.eventcat}<br/>
                                     location: {x.event.location}<br/>
