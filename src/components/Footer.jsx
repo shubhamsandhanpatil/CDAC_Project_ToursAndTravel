@@ -66,8 +66,8 @@ function Footer(){
                 />
               <p><i className="fas fa-home mr-3"></i>  </p>
               <p><i className="fas fa-envelope mr-3"></i> tourtravels@gmail.com</p>
-              <p><i className="fas fa-phone mr-3"></i> + 7894561231</p>
-              <p><i className="fas fa-print mr-3"></i> + 987654321</p>
+              <p><i className="fas fa-phone mr-3"></i> + 9370761021</p>
+              <p><i className="fas fa-print mr-3"></i> + 9075203711</p>
             </div>
        
           </div>
