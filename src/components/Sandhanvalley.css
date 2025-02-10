@@ -1,0 +1,35 @@
+.front-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.history {
+    padding: 20px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.his-h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+.trek-info {
+    padding: 20px;
+}
+
+.trek-overview, .trek-explore, .trek-carry, .trek-package, .trek-escapades {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 26px;
+}
+
+ol {
+    margin-left: 20px;
+    font-size: 18px;
+}

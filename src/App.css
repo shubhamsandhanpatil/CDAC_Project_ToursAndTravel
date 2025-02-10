@@ -97,3 +97,21 @@
    
 
   }
+
+  /* changes/ */
+
+  /* Fix for multi-level dropdown visibility */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: none;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}

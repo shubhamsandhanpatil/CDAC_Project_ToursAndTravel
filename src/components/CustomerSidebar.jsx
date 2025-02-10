@@ -1,21 +1,46 @@
-import { useDispatch } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { Link, useHistory } from "react-router-dom";
 
-function CustomerSidebar(){
-    const dispatch=useDispatch()
-    const history=useHistory()
-    const logout=()=>{
-        dispatch({type:'LogOut'})
-        sessionStorage.clear()
-        history.push("/")
-    }
+// function CustomerSidebar(){
+//     const dispatch=useDispatch()
+//     const history=useHistory()
+//     const logout=()=>{
+//         dispatch({type:'LogOut'})
+//         sessionStorage.clear()
+//         history.push("/")
+//     }
+//     return (
+//         <div className="list-group">
+//             <Link to="/cprofile" className="list-group-item list-group-item-action">Profile</Link>
+//             <Link to="/myorders" className="list-group-item list-group-item-action">My Orders</Link>                   
+//             <Link to="#" onClick={logout} className="list-group-item list-group-item-action">Logout</Link>            
+//         </div>
+//     )
+// }
+
+// export default CustomerSidebar;
+
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+function CustomerSidebar() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const logout = (event) => {
+        event.preventDefault();
+        dispatch({ type: "LogOut" });
+        sessionStorage.clear();
+        navigate("/");
+    };
+
     return (
         <div className="list-group">
             <Link to="/cprofile" className="list-group-item list-group-item-action">Profile</Link>
-            <Link to="/myorders" className="list-group-item list-group-item-action">My Orders</Link>                   
-            <Link to="#" onClick={logout} className="list-group-item list-group-item-action">Logout</Link>            
+            <Link to="/myorders" className="list-group-item list-group-item-action">My Orders</Link>
+            <Link to="#" onClick={logout} className="list-group-item list-group-item-action">Logout</Link>
         </div>
-    )
+    );
 }
 
 export default CustomerSidebar;
